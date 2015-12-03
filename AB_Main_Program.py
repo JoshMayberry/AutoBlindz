@@ -15,7 +15,7 @@
     # Blue LED to D5
     # Red LED to D6
 
-import sys
+import sys 
 import time
 import grovepi
 from Adafruit_PWM_Servo_Driver import PWM
