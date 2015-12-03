@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Change Blinds Settings</title>
+	</head>
+
+	<body>
+		
+			<form action="change_settings.php" method=post>
+			I want my blinds to run <b>based on</b>:
+			<input type="text" name="priority">
+			"0" means Manual Controls, "1" means light sensative, "2" means schedule, and "3" means temperature
+
+			<br>
+			What follows are the controls. If you don't want to change one from it's current setting, then leave it blank.
+			</br>
+
+			<br></br>
+
+			<br>
+			<b>Light Threshold</b>:
+			<input type="text" name="light_thr">
+			This is a value from 0 to 400; 0 being no light and 400 being all the light.
+			</br>
+
+			<br>
+			<b>Loovere Schedule</b>:
+			<input type="text" name="sch_blin"> 
+			This is a list of times and amounts open. Please use the correct format. For example, if I wanted my looveres to open at 6:00AM, close half way at 12:00PM, and close
+			 all the way at 6:30PM, then I would use the following code: 6:00$-100%12:00$-50%18:30$0 Note how the times are in military time. If I wanted them to respond
+			 to a specific light threshold at the same times, say 400 at 6:00, 200 at 12:00, and 0 at 6:30, I would use the following code: 6:00$400%12:00$200%18:30$0.
+			 Notice how the second value in the list was negative for blindly staying open at a specific distance, and positive for light sensativity. You can combine these like
+			 so: 6:00$-100%12:00$200%18:30$0 would open your looveres 100% at 6:00AM, regualte the light with a treshold of 200 at 12:00PM, and close them at 6:30PM.
+			 <b>Remember: Use % to separate different events, and $ to separate the value for that event. Hours and minutes are separated by a :. Do not add spaces.</b>
+			</br>
+
+			<br>
+			<b>Shutters Schedule</b>:
+			<input type ="text" name="sch_shut">
+			This works the same way as the Loovere Schedule above. If you want the program to decide how to open and close them to get the correct amnt of light in, then
+			 leave this one blank and fill out only the top one.
+			</br>
+
+			<input type ="submit" name="submit" value="That's Right!">
+		</form>
+	</body>
+</html>
